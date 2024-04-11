@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <script>
+        var totalStyles = 2; // Total number of CSS files
+        var loadedStyles = 0;
+        
+        function cssLoaded() {
+            loadedStyles++;
+            if (loadedStyles === totalStyles) {
+                document.body.style.display = 'block';
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/css/main.css" onload="cssLoaded()">
+    <link rel="stylesheet" href="/css/home.css" onload="cssLoaded()">
     <title>Jeremy Moss Profile - Home</title>
 </head>
 <body>
     <%- include('partials/header'); %>
     <main>
-        <section class="hero">
-            <div class="overlay">
-                <div class="hero_container">
-                    <h1 class="hero_heading">Jeremy J Moss</h1>
-                    <p class="hero_text">Full Stack Web Developer</p>
-                    <p class="hero_subtext">Transforming vision into digital reality with a blend of creativity and technical expertise,<br/> delivering immersive web solutions that exceed expectations.</p>
-                </div>
-            </div>
-        </section>
+        <%- include('sections/hero') %>
     </main>
 </body>
 </html>

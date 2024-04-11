@@ -9,6 +9,7 @@
 
 body {
     background-color: rgb(15, 24, 39);
+    display: none;
 }
 
 header {
@@ -19,6 +20,8 @@ header {
     align-items: center;
     position: fixed;
     width: 100%;
+    z-index: 1;
+    background-color: rgb(15, 24, 39, 0.2);
 }
 
 .header-logo {
@@ -44,7 +47,7 @@ header nav {
 header nav ul {
     display: flex;
     list-style: none;
-    gap: 4rem;
+    gap: 3rem;
     font-size: 1.25rem;
     font-weight: 500;
 }
@@ -56,4 +59,26 @@ header nav ul li.active {
 header nav ul li a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
+    position: relative;
+    padding-inline: 10px;
 }
+
+header nav ul li a:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #eee;
+    position: absolute;
+    bottom: -5px;
+    left: 5px;
+}
+
+header nav ul li.active a:after {
+    background-color: rgb(14, 136, 236);
+}
+
+header nav ul li a:hover:after {
+    width: calc(100% - 10px);
+    transition: all 0.2s ease-in-out;
+} 
