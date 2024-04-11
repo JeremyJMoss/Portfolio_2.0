@@ -1,8 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+
 .hero {
+    height: 100vh;
+    background-image: url('../images/lightbulb.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background-color: rgba(15, 24, 39, 0.5);
+    padding-bottom: 5rem;
 }
 
 .hero_container {
@@ -10,15 +22,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     color: #eee;
-    background-color: rgba(10, 201, 207, 0.1);
-    padding-block: 3rem;
-    border-radius: 50%;
 }
 
 .hero_heading {
-    font-size: 6rem;
+    font-size: 5rem;
+    font-family: "Whisper", cursive;
 }
 
 .hero_text {
@@ -26,9 +36,8 @@
 }
 
 .hero_subtext {
-    max-width: 50rem;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.7;
 }
 
